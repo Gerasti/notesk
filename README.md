@@ -394,16 +394,16 @@ systemctl enable --now sshd
 #### Information of machine in /etc/ansible/inventory
 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/ansible/ansible_inventory.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/ansible/ansible_inventory.png) <!-- SCREEN --> 
 
 #### Specify communication options in /etc/ansible/ansible.cfg (e.g. inventory path, SSH settings, privilege escalation)
 <!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/ansible/ansible_cfg.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/ansible/ansible_cfg.png) <!-- SCREEN --> 
 
 #### Ping all machines and run command as sudo group using Ansible<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/ansible/ansible_commands.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/ansible/ansible_commands.png) <!-- SCREEN --> 
 
 #### CLI<!-- ACTION --> 
 
@@ -1399,7 +1399,7 @@ curl https://srv-hq.your.domain
 
 #### Enter to advanced mode and click 'e' <!-- ACTION -->
   
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/grub/welcomeScreen.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/grub/welcomeScreen.png) <!-- SCREEN -->
 
 #### At the line starting with `linux /boot/vmlinuz/...`, add the required code below it, then press `F10` to continue.
 <!-- ACTION -->
@@ -2095,7 +2095,7 @@ ip a
 ```
 <!-- CODE -->
 #### In /etc/network/interfaces for static, dynamic <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/Basic/interfaces.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Basic/interfaces.png) <!-- SCREEN -->
 
 #### Accept network changes<!-- ACTION -->
 
@@ -2289,7 +2289,7 @@ sytsemctl restart network
 
 #### Write subinterfaces /etc/network/interfaces<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/VLAN/deb_vlan.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/VLAN/deb_vlan.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 ```bash
@@ -2439,8 +2439,8 @@ ssh srv-hq
 ### +/ Linux   <!-- PLATFORM -->
 
 #### In /etc/apt/sources.list commenting first string and write<!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/Basic/reps.png) <!-- SCREEN -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/Basic/reps_alt.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Basic/reps.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Basic/reps_alt.png) <!-- SCREEN -->
 
 </details>
 <details>
@@ -2449,7 +2449,7 @@ ssh srv-hq
 ### +/ Linux   <!-- PLATFORM -->
 
 #### In /etc/resolv.conf<!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/Basic/resolv.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Basic/resolv.png) <!-- SCREEN -->
 
 </details>
 
@@ -2581,7 +2581,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 <!-- CODE -->
 #### Uncomment string in /etc/sysctl.conf <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/Tunneling/sysctlForward.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Tunneling/sysctlForward.png) <!-- SCREEN -->
 
 #### Accept changes <!-- ACTION -->
 
@@ -2592,7 +2592,7 @@ sysctl -p
 <!-- CODE -->
 
 #### In /etc/network/interfaces write new tunnel and mirror on another device<!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/Tunneling/int_tunn.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Tunneling/int_tunn.png) <!-- SCREEN -->
 
 #### Accept network changes<!-- ACTION -->
 
@@ -2734,7 +2734,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 <!-- CODE -->
 #### Uncomment string in /etc/sysctl.conf <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/NAT/sysctlForward.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/NAT/sysctlForward.png) <!-- SCREEN -->
 
 #### Accept changes <!-- ACTION -->
 
@@ -2802,7 +2802,7 @@ ip a
 <!-- CODE -->
 
 #### In /etc/nftables.conf<!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/Network_settings/NAT/nftConf.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/NAT/nftConf.png) <!-- SCREEN -->
 
 #### Enable service changes <!-- ACTION -->
 
@@ -2938,7 +2938,7 @@ apt-get install frr
 
 #### turn on ospf /etc/frr/daemons<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/OSPF/frr_daemons.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/OSPF/frr_daemons.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 ```bash
@@ -2965,7 +2965,7 @@ do wr mem
 
 #### do show ip ospf route && ip route sh<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/OSPF/ospf_route.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/OSPF/ospf_route.png) <!-- SCREEN --> 
 
 </details>
 
@@ -2990,11 +2990,11 @@ allow-transfer { srv-slave; };
 
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_options0.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_options0.png) <!-- SCREEN --> 
 
 #### at logging category lame-servers {null;};<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_options1.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_options1.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 
@@ -3004,7 +3004,7 @@ nano /etc/net/ifaces/ens33/resolv.conf
 
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_resolv.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_resolv.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 
@@ -3016,7 +3016,7 @@ nano /etc/bind/local.conf
 
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_local.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_local.png) <!-- SCREEN --> 
 
 #### Copy default-record<!-- ACTION --> 
 
@@ -3044,7 +3044,7 @@ chown named:named /etc/bind/zone/33.168.192.in-addr.arpa.db
 
 #### Forward zone /etc/bind/zone/au.db<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_dbau.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_dbau.png) <!-- SCREEN --> 
 
 #### Reverse zones<!-- ACTION --> 
 
@@ -3056,7 +3056,7 @@ nano /etc/bind/zone/11.168.192.in-addr.arpa.db
   
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_db11.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_db11.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 
@@ -3065,7 +3065,7 @@ nano /etc/bind/zone/33.168.192.in-addr.arpa.db
 ```
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_db33.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_db33.png) <!-- SCREEN --> 
 
 #### Checking zone<!-- ACTION --> 
 
@@ -3078,7 +3078,7 @@ named-checkconf -z
 
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_namedcheckconf.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_namedcheckconf.png) <!-- SCREEN --> 
 
 #### SRV-DT<!-- ACTION --> 
 
@@ -3096,7 +3096,7 @@ nano /etc/bind/local.conf
 
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_local1.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_local1.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 
@@ -3106,7 +3106,7 @@ nano /etc/net/ifaces/ens33/resolv.conf
 
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_resolv1.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_resolv1.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 
@@ -3129,7 +3129,7 @@ control bind-slave enabled
 
 #### Checking slave-zone<!-- ACTION --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/dns/bind_slaveZones.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/dns/bind_slaveZones.png) <!-- SCREEN --> 
 
 </details>
 
@@ -3153,7 +3153,7 @@ nano /etc/chrony.conf
 ```
 <!-- CODE --> 
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/chrony/chrony_srv.png) <!-- SCREEN --> 
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/chrony/chrony_srv.png) <!-- SCREEN --> 
 
 <!-- CODE -->
 ```bash
@@ -3628,11 +3628,11 @@ minimal-responses yes;
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_options0.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_options0.png) <!-- SCREEN -->
 
 #### At logging<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_options1.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_options1.png) <!-- SCREEN -->
 
 <!-- CODE -->
 ```bash
@@ -3642,7 +3642,7 @@ systemctl stop bind
 
 #### In /etc/sysconfig/network<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_sycconfig.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_sycconfig.png) <!-- SCREEN -->
 
 #### Zone conflicts occur when identical domains are defined in both BIND and SAMBA BIND9_DLZ configurations<!-- ACTION -->
 
@@ -3731,7 +3731,7 @@ host -t A hq-srv.
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_checkDC.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_checkDC.png) <!-- SCREEN -->
 
 #### Checking kerberos<!-- ACTION -->
 
@@ -3747,7 +3747,7 @@ klist
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_klist.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_klist.png) <!-- SCREEN -->
 
 #### Join domain as client <!-- ACTION -->
 
@@ -3824,7 +3824,7 @@ klist
 
 #### in /etc/resolv.conf<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_resolvClient.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_resolvClient.png) <!-- SCREEN -->
 
 #### Check nameserver<!-- ACTION -->
 
@@ -3834,7 +3834,7 @@ host srv-hq
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_checkNS.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_checkNS.png) <!-- SCREEN -->
 
 #### Enter to a domain Alt*<!-- ACTION -->
 
@@ -3845,13 +3845,13 @@ acc
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_acc0.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_acc0.png) <!-- SCREEN -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_acc1.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_acc1.png) <!-- SCREEN -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_acc2.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_acc2.png) <!-- SCREEN -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_acc3.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_acc3.png) <!-- SCREEN -->
 
 <!-- CODE -->
 ```bash
@@ -3867,7 +3867,7 @@ id
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_checkID.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_checkID.png) <!-- SCREEN -->
 
 
 </details>
@@ -4042,11 +4042,11 @@ apt-get install -y task-samba-dc
 
 #### In /etc/resolv.conf<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_resolvDT.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_resolvDT.png) <!-- SCREEN -->
 
 #### In /etc/krb5.conf<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_krbDT.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_krbDT.png) <!-- SCREEN -->
 
 #### Secondary AD must have a dynamic record in BIND9\_DLZ (refer to samba-tool scripts <!-- ACTION -->
 
@@ -4058,7 +4058,7 @@ samba-tool dns add srv-hq ad.team srv-dt A 192.168.33.67 -Uadministrator
 
 #### Checking<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_checkDT.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_checkDT.png) <!-- SCREEN -->
 
 #### Log in as domain controller<!-- ACTION -->
 
@@ -4083,7 +4083,7 @@ chmod 777 /opt/data
 
 #### In /etc/samba/smb.conf<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_smbShareFolder.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_smbShareFolder.png) <!-- SCREEN -->
 
 #### CLI<!-- ACTION -->
 
@@ -4095,7 +4095,7 @@ smb://srv/
 ```
 <!-- CODE -->
 
-![image](https://github.com/Gerasti/NoTesks/blob/main/documents/screen/samba/samba_cliCheckFolder.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_cliCheckFolder.png) <!-- SCREEN -->
 
 
 
