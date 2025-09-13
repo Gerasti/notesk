@@ -2837,7 +2837,7 @@ systemctl restart nftables.service
 <details> 
 <summary> ospf </summary> 
 
-### +/ Linux Alt (quagga - fork frr) <!-- PLATFORM -->
+### +/ Linux Alt (quagga - old) <!-- PLATFORM -->
 
 <!-- CODE -->
 
