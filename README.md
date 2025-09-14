@@ -2284,6 +2284,16 @@ sytsemctl restart network
 
 <!-- CODE -->
 
+#### else emerge <!-- ACTION -->
+
+<!-- CODE -->
+
+```bash
+dhcpd
+```
+
+<!-- CODE -->
+
 
 ### +/ Linux Debian <!-- PLATFORM --> 
 
