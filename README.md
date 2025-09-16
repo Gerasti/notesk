@@ -3674,11 +3674,19 @@ mkdir -p /var/lib/samba/sysvol
 ```
 <!-- CODE -->
 
+#### specify server ip as dns server at '/etc/resolv.conf' <!-- ACTION -->
+
+<!-- CODE -->
+```bash
+nameserver 127.0.0.1 # or your dns server
+```
+<!-- CODE -->
+
 #### Provision samba domain ad.team<!-- ACTION -->
 
 <!-- CODE -->
 ```bash
-samba tool domain provision --realm=ad.team --domain=ad --adminpass='P@ssw0rd' --dns-backend=BIND9_DLZ --server-role=dc --use-rfc2307
+samba-tool domain provision --realm=ad.team --domain=ad --adminpass='P@ssw0rd' --dns-backend=BIND9_DLZ --server-role=dc --use-rfc2307
 ```
 <!-- CODE -->
 
