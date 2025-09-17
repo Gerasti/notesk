@@ -1908,7 +1908,8 @@ source "$PLAYONLINUX/lib/sources"
 PREFIX="Office2010"
 WINEVERSION="3.0.3"
 TITLE="Microsoft Office 2010"
-POL_GetSetupImages "http://files.playonlinux.com/resources/setups/Office/top.jpg" "http://files.playonlinux.com/resources/setups/Office/left.png" "$TITLE"
+POL_GetSetupImages "http://files.playonlinux.com/resources/setups/Office/top.jpg" "http://files.playonlinux.com/resources/setups/Office/l
+eft.png" "$TITLE"
 POL_SetupWindow_Init
 POL_SetupWindow_SetID 801
 POL_SetupWindow_presentation "$TITLE" "Microsoft" "http://www.microsoft.com" "Quentin PГ‚RIS" "$PREFIX"
@@ -2479,16 +2480,6 @@ ssh srv-hq
 
 ### +/ Alt linux (etcnet) <!-- PLATFORM -->
 
-#### Turn on ip_forward<!-- ACTION -->
-
-<!-- CODE -->
-
-```bash
-echo 1 > /proc/sys/net/ipv4/ip_forward
-```
-
-<!-- CODE -->
-
 <!-- CODE -->
 
 ```bash
@@ -2583,13 +2574,6 @@ modprobe ip_gre
 
 <!-- CODE -->
 
-#### Turn on ip_forward<!-- ACTION -->
-
-<!-- CODE -->
-```bash
-echo 1 > /proc/sys/net/ipv4/ip_forward
-```
-<!-- CODE -->
 #### Uncomment string in /etc/sysctl.conf <!-- ACTION -->
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/Tunneling/sysctlForward.png) <!-- SCREEN -->
 
@@ -2952,7 +2936,8 @@ apt-get install frr
 
 <!-- CODE -->
 ```bash
-systemctl enable --now frr
+systemctl enable frr
+systemctl restart frr
 vtysh
 conf t
 ip forwarding
@@ -2976,6 +2961,8 @@ do wr mem
 #### do show ip ospf route && ip route sh<!-- ACTION --> 
 
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/OSPF/ospf_route.png) <!-- SCREEN --> 
+
+#### And mirror on another router <!-- ACTION -->
 
 </details>
 
@@ -3605,7 +3592,7 @@ curl -v https://zabbix.au.team
 <details>
   <summary>samba</summary>
 
-### +/ Linux  <!-- PLATFORM -->
+### +/ Alt Linux  <!-- PLATFORM -->
 <details>
 <summary>Primary Active Directory Domain Controller </summary> <!-- TOPIC -->
 
@@ -3613,7 +3600,7 @@ curl -v https://zabbix.au.team
 
 <!-- CODE -->
 ```bash
-apt-get install -y task-samba-dc
+apt-get install -y task-samba-dc bind
 ```
 <!-- CODE -->
 
@@ -3674,7 +3661,7 @@ mkdir -p /var/lib/samba/sysvol
 ```
 <!-- CODE -->
 
-#### specify server ip as dns server at '/etc/resolv.conf' <!-- ACTION -->
+#### specify server ip as dns server in /etc/resolv.conf <!-- ACTION -->
 
 <!-- CODE -->
 ```bash
