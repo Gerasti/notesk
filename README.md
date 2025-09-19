@@ -401,10 +401,6 @@ systemctl enable --now sshd
 
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/ansible/ansible_cfg.png) <!-- SCREEN --> 
 
-#### Ping all machines and run command as sudo group using Ansible<!-- ACTION --> 
-
-![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/ansible/ansible_commands.png) <!-- SCREEN --> 
-
 #### CLI<!-- ACTION --> 
 
 <!-- CODE -->
@@ -417,6 +413,11 @@ echo "sshuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 systemctl enable --now sshd
 ```
 <!-- CODE --> 
+
+#### SRV<!-- ACTION --> 
+#### Ping all machines and run command as sudo group using Ansible<!-- ACTION --> 
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/ansible/ansible_commands.png) <!-- SCREEN --> 
 
 </details>
 
