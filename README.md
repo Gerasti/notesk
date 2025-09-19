@@ -3754,7 +3754,7 @@ klist
 
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_klist.png) <!-- SCREEN -->
 
-#### Join domain as client <!-- ACTION -->
+### Join domain as client <!-- ACTION -->
 
 <!-- CODE -->
 ```bash
@@ -3829,17 +3829,33 @@ klist
 
 #### in /etc/resolv.conf<!-- ACTION -->
 
-![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_resolvClient.png) <!-- SCREEN -->
+<!-- CODE -->
+
+```bash
+domain ad.team
+nameserver 192.168.11.67
+nameserver 192.168.33.67
+nameserver 8.8.8.8
+```
+
+<!-- CODE -->
+
+#### Auth in ads
+
+<!-- CODE -->
+```bash
+net ads join -U administrator@AD.TEAM -S 192.168.11.67
+```
+<!-- CODE -->
 
 #### Check nameserver<!-- ACTION -->
 
 <!-- CODE -->
 ```bash
 host srv-hq
+host <HOST_YOUR_MACHINE>
 ```
 <!-- CODE -->
-
-![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_checkNS.png) <!-- SCREEN -->
 
 #### Enter to a domain Alt*<!-- ACTION -->
 
