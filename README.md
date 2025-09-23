@@ -505,7 +505,7 @@ systemctl enable --now sshd
 
 ### +/ Linux Alt <!-- PLATFORM -->
 
-> printer cups-pdf* <!-- Citation -->
+> cups-pdf* printer<!-- Citation -->
 
 #### SRV <!-- ACTION -->
 
@@ -523,7 +523,17 @@ apt-get install cups cups-pdf
 <!-- CODE -->
 
 ```MarkDown Keemplate
-Listen *:631<Location />  Order allow,deny  Allow all</Location><Location /admin>  Order allow,deny  Allow all</Location>
+Listen *:631
+
+<Location />
+Order allow,deny
+Allow all
+</Location>
+
+<Location /admin>
+Order allow,deny
+Allow all
+</Location>
 ```
 <!-- CODE -->
 
@@ -531,7 +541,8 @@ Listen *:631<Location />  Order allow,deny  Allow all</Location><Location /admin
 <!-- CODE -->
 
 ```MarkDown Keemplate
-systemctl enable cups # optionalsystemctl restart cupslpstat -p # show allowed printer
+systemctl enable cups # optional
+systemctl restart cupslpstat -p # show allowed printer
 ```
 <!-- CODE -->
 
@@ -561,7 +572,7 @@ lpoptions -d <NAME_FROM_lpstat>
 ```
 <!-- CODE -->
 
-#### Verify <!-- ACTION -->
+#### Verify printer <!-- ACTION -->
 <!-- CODE -->
 
 ```MarkDown Keemplate
@@ -580,98 +591,7 @@ echo "text" | lp -t "Example"
 
 #### SRV <!-- ACTION -->
 
-#### Verify <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-ls -l /home/<CLI_USERNAME>/
-```
-<!-- CODE -->
-
-</details>             <!-- FFIELD -->
-sti@gerasti:~/GIT/NoTesk$
-sti@gerasti:~/GIT/NoTesk$ python3 KeemplateMD.py
-<details>
-<summary> CUPS  </summary>     <!-- ff -->
-
-### +/ Linux Alt <!-- PLATFORM -->
-
-> printer cups-pdf* <!-- Citation -->
-
-#### SRV <!-- ACTION -->
-
-#### Install <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-apt-get install cups cups-pdf
-```
-<!-- CODE -->
-
-#### Change configuration to purpose <!-- ACTION -->
-
-> in /etc/cups/cupsd.conf <!-- Citation -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-Listen *:631<Location />  Order allow,deny  Allow all</Location><Location /admin>  Order allow,deny  Allow all</Location>
-```
-<!-- CODE -->
-
-#### Launch and conduct <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-systemctl enable cups # optionalsystemctl restart cupslpstat -p # show allowed printer
-```
-<!-- CODE -->
-
-#### CLI <!-- ACTION -->
-
-#### Install <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-sudo apt-get install cups
-```
-<!-- CODE -->
-
-#### Attach <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-sudo lpadmin -p <NAME_FROM_lpstat> -E -v ipp://<IP_SRV>:631/printers/<NAME_FROM_lpstat> -m everywhere
-```
-<!-- CODE -->
-
-#### Indicate as default <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-lpoptions -d <NAME_FROM_lpstat>
-```
-<!-- CODE -->
-
-#### Verify <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-lpstat -t
-```
-<!-- CODE -->
----
-
-#### Work <!-- ACTION -->
-<!-- CODE -->
-
-```MarkDown Keemplate
-echo "text" | lp -t "Example"
-```
-<!-- CODE -->
-
-#### SRV <!-- ACTION -->
-
-#### Verify <!-- ACTION -->
+#### Verify pdf <!-- ACTION -->
 <!-- CODE -->
 
 ```MarkDown Keemplate
@@ -4100,13 +4020,14 @@ id
 
 #### Check /etc/samba/smb.conf due testparm <!-- ACTION -->
 
-> indicate server role;realm; workgroup; winbind use default domain(for domain users);idmap(for domain dist users and domain * users). <!-- Citation -->
+> indicate server role; realm; workgroup; winbind use default domain(for domain users); idmap(for domain dist users and domain * users). <!-- Citation -->
 
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_testparm.png) <!-- SCREEN -->
 
 #### Join to domain due 'net ads'(after join launch 'winbind' due systemctl) <!-- ACTION -->
 
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_join.png) <!-- SCREEN -->
+
 ---
 
 #### Settings for domain users <!-- ACTION -->
