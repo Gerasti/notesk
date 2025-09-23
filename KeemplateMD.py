@@ -37,7 +37,7 @@ def tokenize_input(input_str):
     return tokens
 
 def clean_data(data):
-    data = [d for d in data if d not in {" ", "\n"}]
+    data = [d for d in data if d not in {"\n"}]
     if data and data[0].startswith(' '):
         data = data[1:]
     if data and (data[-1].endswith(' ') or data[-1].endswith('\n')):
@@ -175,6 +175,8 @@ def process_tokens(tokens):
 
 if __name__ == "__main__":
     input_data = sys.stdin.read()
+#    file = open('/home/sti/Pictures/prompt.txt')
+#    input_data = file.read()
     tokens = tokenize_input(input_data)
     result = process_tokens(tokens)
     print("\n".join(result))

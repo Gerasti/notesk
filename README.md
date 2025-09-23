@@ -499,6 +499,188 @@ systemctl enable --now sshd
 </details>        <!-- FFIELD -->
 
 ### C)
+
+<details>
+<summary> CUPS  </summary>     <!-- ff -->
+
+### +/ Linux Alt <!-- PLATFORM -->
+
+> printer cups-pdf* <!-- Citation -->
+
+#### SRV <!-- ACTION -->
+
+#### Install <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+apt-get install cups cups-pdf
+```
+<!-- CODE -->
+
+#### Change configuration to purpose <!-- ACTION -->
+
+> in /etc/cups/cupsd.conf <!-- Citation -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+Listen *:631<Location />  Order allow,deny  Allow all</Location><Location /admin>  Order allow,deny  Allow all</Location>
+```
+<!-- CODE -->
+
+#### Launch and conduct <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+systemctl enable cups # optionalsystemctl restart cupslpstat -p # show allowed printer
+```
+<!-- CODE -->
+
+#### CLI <!-- ACTION -->
+
+#### Install <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+sudo apt-get install cups
+```
+<!-- CODE -->
+
+#### Attach <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+sudo lpadmin -p <NAME_FROM_lpstat> -E -v ipp://<IP_SRV>:631/printers/<NAME_FROM_lpstat> -m everywhere
+```
+<!-- CODE -->
+
+#### Indicate as default <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+lpoptions -d <NAME_FROM_lpstat>
+```
+<!-- CODE -->
+
+#### Verify <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+lpstat -t
+```
+<!-- CODE -->
+---
+
+#### Work <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+echo "text" | lp -t "Example"
+```
+<!-- CODE -->
+
+#### SRV <!-- ACTION -->
+
+#### Verify <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+ls -l /home/<CLI_USERNAME>/
+```
+<!-- CODE -->
+
+</details>             <!-- FFIELD -->
+sti@gerasti:~/GIT/NoTesk$
+sti@gerasti:~/GIT/NoTesk$ python3 KeemplateMD.py
+<details>
+<summary> CUPS  </summary>     <!-- ff -->
+
+### +/ Linux Alt <!-- PLATFORM -->
+
+> printer cups-pdf* <!-- Citation -->
+
+#### SRV <!-- ACTION -->
+
+#### Install <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+apt-get install cups cups-pdf
+```
+<!-- CODE -->
+
+#### Change configuration to purpose <!-- ACTION -->
+
+> in /etc/cups/cupsd.conf <!-- Citation -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+Listen *:631<Location />  Order allow,deny  Allow all</Location><Location /admin>  Order allow,deny  Allow all</Location>
+```
+<!-- CODE -->
+
+#### Launch and conduct <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+systemctl enable cups # optionalsystemctl restart cupslpstat -p # show allowed printer
+```
+<!-- CODE -->
+
+#### CLI <!-- ACTION -->
+
+#### Install <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+sudo apt-get install cups
+```
+<!-- CODE -->
+
+#### Attach <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+sudo lpadmin -p <NAME_FROM_lpstat> -E -v ipp://<IP_SRV>:631/printers/<NAME_FROM_lpstat> -m everywhere
+```
+<!-- CODE -->
+
+#### Indicate as default <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+lpoptions -d <NAME_FROM_lpstat>
+```
+<!-- CODE -->
+
+#### Verify <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+lpstat -t
+```
+<!-- CODE -->
+---
+
+#### Work <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+echo "text" | lp -t "Example"
+```
+<!-- CODE -->
+
+#### SRV <!-- ACTION -->
+
+#### Verify <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+ls -l /home/<CLI_USERNAME>/
+```
+<!-- CODE -->
+
+</details>             <!-- FFIELD -->
+
 ### D)
 
 <details>
@@ -2721,13 +2903,7 @@ ping 10.10.10.2
 <summary> nftables</summary> <!-- TOPIC -->
   
 ### +/ Linux   <!-- PLATFORM -->
-#### Turn on ip_forward<!-- ACTION -->
 
-<!-- CODE -->
-```bash
-echo 1 > /proc/sys/net/ipv4/ip_forward
-```
-<!-- CODE -->
 #### Uncomment string in /etc/sysctl.conf <!-- ACTION -->
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/NAT/sysctlForward.png) <!-- SCREEN -->
 
@@ -2759,6 +2935,14 @@ table ip nat {
 	oif "ens32" masquerade
 	}
 }
+```
+<!-- CODE -->
+
+> For pick a file of configuration use: <!-- Citation -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+nft -f <FILE>
 ```
 <!-- CODE -->
 
@@ -2808,21 +2992,6 @@ systemctl enable nftables.service
 systemctl restart nftables.service
 ```
 <!-- CODE -->
-
-<details>
-  <summary>manual</summary>
-  
-<!-- GENERAL COMMENT -->
-  
-** **
-<!-- GENERAL COMMENT -->
-</details>
-<details>
-<summary>unaccept</summary>
-<!-- UPDATING PLATFORM -->
-
-<!-- UPDATING PLATFORM -->
-</details>
 
 </details>
 </details>
@@ -2877,19 +3046,20 @@ ip a
 vtysh
 conf t
 ip forwarding
-int tun
-ip ospf message-digest-key 1 md5 P@ssw0rd
-ip ospf network point-to-point
 router ospf
 ospf router-id 1.1.1.1
 network 10.10.10.0/30 area 0
 network 192.168.11.0/26 area 0
 network 192.168.11.65/28 area 0
 network 192.168.11.81/29 area 0
-passive-interface default
-no passive-interface tun
-no passive-interface ens35 # subnets
 area 0 authentication message-digest
+passive-interface default
+int tun # either gre or other
+no ip ospf passive
+ip ospf message-digest-key 1 md5 P@ssw0rd
+ip ospf network point-to-point
+int ens35 # iface to neighbor router
+no ip ospf passive
 do wr mem
 do sh run
 ```
@@ -2942,19 +3112,20 @@ systemctl restart frr
 vtysh
 conf t
 ip forwarding
-int tun
-ip ospf message-digest-key 1 md5 P@ssw0rd
-ip ospf network point-to-point
 router ospf
 ospf router-id 1.1.1.1
 network 10.10.10.0/30 area 0
 network 192.168.11.0/26 area 0
 network 192.168.11.65/28 area 0
 network 192.168.11.81/29 area 0
-passive-interface default
-no passive-interface tun
-no passive-interface ens33 # subnets
 area 0 authentication message-digest
+passive-interface default
+int tun # either gre or other
+no ip ospf passive
+ip ospf message-digest-key 1 md5 P@ssw0rd
+ip ospf network point-to-point
+int ens33 # iface to neighbor router
+no ip ospf passive
 do wr mem
 ```
 <!-- CODE --> 
@@ -3593,9 +3764,15 @@ curl -v https://zabbix.au.team
 <details>
   <summary>samba</summary>
 
-### +/ Alt Linux  <!-- PLATFORM -->
+### +/ Linux  <!-- PLATFORM -->
+
 <details>
 <summary>Primary Active Directory Domain Controller </summary> <!-- TOPIC -->
+
+### +/ Alt Linux  <!-- PLATFORM -->
+
+<details>
+<summary> explore  </summary>     <!-- TOPIC -->
 
 #### BIND9_DLZ on basic BIND<!-- ACTION -->
 
@@ -3891,6 +4068,66 @@ id
 
 ![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/samba_checkID.png) <!-- SCREEN -->
 
+</details>
+
+### +/ Debian Linux (console) <!-- PLATFORM -->
+<details>
+<summary> explore  </summary>     <!-- TOPIC -->
+
+#### Install <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_admin_pkgs.png) <!-- SCREEN -->
+
+#### Pseudo GUI <!-- ACTION -->
+
+#### Indicate realm <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_krb_1.png) <!-- SCREEN -->
+
+#### Indicate kerberos servers <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_krb_2.png) <!-- SCREEN -->
+
+#### Indicate primary kerberos servers <!-- ACTION -->
+
+#### In /etc/hosts write fqdn of machine with ip <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_admin_hosts.png) <!-- SCREEN -->
+
+#### Kerberos verify <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_kinit.png) <!-- SCREEN -->
+
+#### Check /etc/samba/smb.conf due testparm <!-- ACTION -->
+
+> indicate server role;realm; workgroup; winbind use default domain(for domain users);idmap(for domain dist users and domain * users). <!-- Citation -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_testparm.png) <!-- SCREEN -->
+
+#### Join to domain due 'net ads'(after join launch 'winbind' due systemctl) <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_join.png) <!-- SCREEN -->
+---
+
+#### Settings for domain users <!-- ACTION -->
+
+#### In /etc/nsswitch.conf <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_nsswitch.conf) <!-- SCREEN -->
+
+#### Domain id verify <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_id.png) <!-- SCREEN -->
+
+#### Attach mkhomedir module <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_pam_mkhomedir.png) <!-- SCREEN -->
+
+#### Succesful login <!-- ACTION -->
+
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/samba/deb_samba_domain_home.png) <!-- SCREEN -->
+
+</details>
 
 </details>
 
