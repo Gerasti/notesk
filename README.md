@@ -503,7 +503,7 @@ systemctl enable --now sshd
 <details>
 <summary> CUPS  </summary>     <!-- ff -->
 
-### +/ Linux Alt <!-- PLATFORM -->
+### +/ Alt Linux <!-- PLATFORM -->
 
 > cups-pdf* printer<!-- Citation -->
 
@@ -2113,7 +2113,7 @@ playonlinux
  
 <summary> IP addr</summary> 
 
-### +/ Linux Alt (etcnet) <!-- PLATFORM -->
+### +/ Alt Linux (etcnet) <!-- PLATFORM -->
 
 #### Example configuration for interface ens32 <!-- ACTION -->
 
@@ -2189,7 +2189,7 @@ systemctl restart network
 <!-- CODE -->
 
 
-### +/ Linux Debian-based  <!-- PLATFORM -->
+### +/ Debian Linux-based  <!-- PLATFORM -->
 
 #### Find exist interfaces <!-- ACTION -->
 
@@ -2338,7 +2338,7 @@ systemctl status isc-dhcp-server
 	
 <summary> vlan</summary> <!-- TOPIC --> 
 
-### +/ Linux Alt (etcnet) <!-- PLATFORM -->
+### +/ Alt Linux (etcnet) <!-- PLATFORM -->
 
 #### Check interfaces <!-- ACTION -->
 
@@ -2399,7 +2399,7 @@ dhcpd
 <!-- CODE -->
 
 
-### +/ Linux Debian <!-- PLATFORM --> 
+### +/ Debian Linux <!-- PLATFORM --> 
 
 #### Write subinterfaces /etc/network/interfaces<!-- ACTION --> 
 
@@ -2664,7 +2664,7 @@ systemctl restart network
 
 #### Mirror on another router <!-- ACTION -->
 
-### +/ Linux Debian <!-- PLATFORM -->
+### +/ Debian Linux <!-- PLATFORM -->
 
 #### In /etc/modules write 'ip_gre'
 #### or just turn on
@@ -2921,7 +2921,7 @@ systemctl restart nftables.service
 <details> 
 <summary> ospf </summary> 
 
-### +/ Linux Alt (quagga - old) <!-- PLATFORM -->
+### +/ Alt Linux (quagga - old) <!-- PLATFORM -->
 
 <!-- CODE -->
 
@@ -3013,7 +3013,7 @@ sh ip ospf neighbour
 - `point-to-point`: saves trafic and use for 2 node (multicast 224.0.0.5) <!-- JUST -->
 - `broadcast`: use for >2 node and supply Backup Designated Router(DR/BDR) (multicast 224.0.0.5; 224.0.0.6) <!-- JUST -->
 
-### +/ Linux Debian (frr) <!-- PLATFORM -->
+### +/ Debian Linux (frr) <!-- PLATFORM -->
 
 <!-- CODE -->
 ```bash
