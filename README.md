@@ -3458,18 +3458,18 @@ sd Method types
 ---
 
 <details>
-<summary> nfs  </summary>     <!-- ff -->
+<summary> NFS  </summary>     <!-- ff -->
 
 ### +/Alt Linux <!-- PLATFORM -->
 
 #### SRV <!-- ACTION -->
 
 #### Install <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesk/tree/main/documents/screen/nfs/srv_install.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/nfs/srv_install.png) <!-- SCREEN -->
 
 
 #### Create a folder, set permissions, overwrite /etc/exports, and apply the changes <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesk/tree/main/documents/screen/nfs/exports.png
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/nfs/exports.png
 ) <!-- SCREEN -->
 
 ---
@@ -3477,11 +3477,11 @@ sd Method types
 #### CLI <!-- ACTION -->
 
 #### Install, overwrite /etc/fstab, and mount <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesk/tree/main/documents/screen/nfs/cli_install.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/nfs/cli_install.png) <!-- SCREEN -->
 
 
 #### Create a test file <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesk/tree/main/documents/screen/nfs/cli_test.png
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/nfs/cli_test.png
 ) <!-- SCREEN -->
 
 ---
@@ -3489,7 +3489,7 @@ sd Method types
 #### SRV <!-- ACTION -->
 
 #### Verify using the test file <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesk/tree/main/documents/screen/nfs/srv_test.png) <!-- SCREEN -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/nfs/srv_test.png) <!-- SCREEN -->
 
 
 </details>             <!-- FFIELD -->
