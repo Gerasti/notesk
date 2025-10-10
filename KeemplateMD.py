@@ -1,4 +1,5 @@
 import sys
+import os
 from functools import reduce
 
 # For work use 'input_data' in 'main'
@@ -37,7 +38,7 @@ def tokenize_input(input_str):
     return tokens
 
 def clean_data(data):
-    data = [d for d in data if d not in {"\n"}]
+#    data = [d for d in data if d not in {"\n"}]
     if data and data[0].startswith(' '):
         data = data[1:]
     if data and (data[-1].endswith(' ') or data[-1].endswith('\n')):
@@ -77,7 +78,7 @@ def format_output(key, data, context):
         ctx['include_tp'] = True
         return f"\n<details>\n<summary> {joined}  </summary> <!-- tp -->", ctx
     elif key == 'pf':
-        return f"\n### +/ {joined} <!-- PLATFORM -->", ctx
+        return f"\n### +/{joined} <!-- PLATFORM -->", ctx
     elif key == 'ce':
         return f"<!-- CODE -->\n\n```MarkDown Keemplate\n{joined}\n```\n<!-- CODE -->", ctx
     elif key == 'ac':
@@ -87,14 +88,14 @@ def format_output(key, data, context):
         ctx['keys_at_gc'] += 1
         return f"\n<details>\n<summary> manual </summary> <!-- gc -->\n\n<!-- GENERAL COMMENT -->\n\n##### {joined}", ctx
     elif key == 'sc':
-        return f"\n![image]({joined}) <!-- SCREEN -->", ctx
+        return f"![image]({joined}) <!-- SCREEN -->\n", ctx
     elif key == 'lt':
         ctx['MODE_list_lt'] = True
         return f"\n### {joined} <!-- LIST -->", ctx
     elif key == 'ct':
         return f"\n> {joined} <!-- Citation -->", ctx
     elif key == 'hl':
-        return "---", ctx
+        return f"\n---", ctx
 
     return None, ctx
 
@@ -174,9 +175,10 @@ def process_tokens(tokens):
     return output
 
 if __name__ == "__main__":
-    input_data = sys.stdin.read()
-#    file = open('/home/sti/Pictures/prompt.txt')
-#    input_data = file.read()
-    tokens = tokenize_input(input_data)
-    result = process_tokens(tokens)
-    print("\n".join(result))
+#    input_data = sys.stdin.read()
+    file_path = os.path.expanduser("~/Pictures/prompt.txt")
+    with open(file_path, 'r') as file:
+        input_data = file.read()
+        tokens = tokenize_input(input_data)
+        result = process_tokens(tokens)
+        print("\n".join(result))
