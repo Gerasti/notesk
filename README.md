@@ -2521,6 +2521,7 @@ nano /etc/openssh/sshd_config
 
 ```MarkDown Keemplate
 AllowUsers sshuser
+MaxAuthTries 2
 PermitRootLogin no
 PubkeyAuthentication yes
 PasswordAuthentication no
@@ -2586,7 +2587,7 @@ ssh srv-hq
 <!-- CODE -->
 
 ```bash
-nano /etc/sysctl.conf
+nano /etc/net/sysctl.conf
 ```
 
 <!-- CODE -->
@@ -2822,10 +2823,16 @@ ping 10.10.10.2
 <details>
 <summary> nftables</summary> <!-- TOPIC -->
   
-### +/ Linux   <!-- PLATFORM -->
+### +/ Alt Linux   <!-- PLATFORM -->
 
-#### Uncomment string in /etc/sysctl.conf <!-- ACTION -->
-![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/NAT/sysctlForward.png) <!-- SCREEN -->
+#### Rewrite string in /etc/net/sysctl.conf <!-- ACTION -->
+
+<!-- CODE -->
+
+```MarkDown Keemplate
+net.ipv4.ip_forward = 1
+```
+<!-- CODE -->
 
 #### Accept changes <!-- ACTION -->
 
@@ -2834,10 +2841,6 @@ ping 10.10.10.2
 sysctl -p
 ```
 <!-- CODE -->
-
----
-
-### +/ Alt <!-- PLATFORM -->
 
 #### Rules for accept before restart <!-- ACTION -->
 <!-- CODE -->
@@ -2883,6 +2886,9 @@ systemctl restart nftables
 ---
 
 ### +/ Debian <!-- PLATFORM -->
+
+#### Uncomment string in /etc/sysctl.conf <!-- ACTION -->
+![image](https://github.com/Gerasti/NoTesk/blob/main/documents/screen/Network_settings/NAT/sysctlForward.png) <!-- SCREEN -->
 
 #### Save changes<!-- ACTION -->
 
