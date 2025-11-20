@@ -542,7 +542,8 @@ Allow all
 
 ```MarkDown Keemplate
 systemctl enable cups # optional
-systemctl restart cupslpstat -p # show allowed printer
+systemctl restart cups
+lpstat -p # show allowed printer
 ```
 <!-- CODE -->
 
@@ -3280,6 +3281,95 @@ timedatectl
 </details>
 
 ---
+<details>
+<summary> dnsmasq  </summary>     <!-- ff -->
+
+### +/Linux <!-- PLATFORM -->
+
+#### Install <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+apt-get install dnsmasq
+```
+<!-- CODE -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+systemctl enable --now dnsmasq
+```
+<!-- CODE -->
+---
+
+#### Configuration options <!-- ACTION -->
+
+#### DNS <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+
+# DNS will operate on local server interfaces
+listen-address=127.0.0.1,192.168.0.1
+
+# Domain
+domain=no.do
+
+# Disable forwarding of queries into WAN for our local domains
+local=/home.lan/
+
+# Enable DNS cache
+cache-size=1000
+
+# DNS forwarding if not record
+
+server=9.9.9.9
+
+# Allow use of /etc/hosts
+expand-hosts
+
+# Logs
+log-queries
+log-facility=/var/log/dnsmasq.log
+```
+<!-- CODE -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+DHCP
+# Enable DHCP server
+dhcp-range=192.168.0.50,192.168.0.150,12h
+
+# Netmask and gateway
+dhcp-option=3,192.168.0.1          # Default gateway
+dhcp-option=6,192.168.0.1          # DNS — dnsmasq itself
+
+# Domain for DHCP clients
+dhcp-option=15,no.do
+```
+<!-- CODE -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+Other
+# Block interfaces on which dnsmasq should not run
+#except-interface=lo
+#except-interface=eth1
+
+# Run as unprivileged user
+user=nobody
+group=nogroup
+```
+<!-- CODE -->
+
+#### Accept <!-- ACTION -->
+<!-- CODE -->
+
+```MarkDown Keemplate
+systemctl restart dnsmasq
+```
+<!-- CODE -->
+
+</details>             <!-- FFIELD -->
 
 <details>
 <summary>  Nginx  </summary>     <!-- ff -->
