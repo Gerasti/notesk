@@ -3281,6 +3281,7 @@ timedatectl
 </details>
 
 ---
+
 <details>
 <summary> dnsmasq  </summary>     <!-- ff -->
 
@@ -3334,8 +3335,9 @@ log-facility=/var/log/dnsmasq.log
 <!-- CODE -->
 <!-- CODE -->
 
+
+#### DHCP
 ```MarkDown Keemplate
-DHCP
 # Enable DHCP server
 dhcp-range=192.168.0.50,192.168.0.150,12h
 
@@ -3349,8 +3351,9 @@ dhcp-option=15,no.do
 <!-- CODE -->
 <!-- CODE -->
 
+#### Other
+
 ```MarkDown Keemplate
-Other
 # Block interfaces on which dnsmasq should not run
 #except-interface=lo
 #except-interface=eth1
@@ -3370,6 +3373,8 @@ systemctl restart dnsmasq
 <!-- CODE -->
 
 </details>             <!-- FFIELD -->
+
+---
 
 <details>
 <summary>  Nginx  </summary>     <!-- ff -->
