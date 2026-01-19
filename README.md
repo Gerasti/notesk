@@ -3339,6 +3339,9 @@ log-facility=/var/log/dnsmasq.log
 #### DHCP
 ```MarkDown Keemplate
 # Enable DHCP server
+interface=ens3
+bind-interfaces			           # catch only interface that set 
+
 dhcp-range=192.168.0.50,192.168.0.150,12h
 
 # Netmask and gateway
